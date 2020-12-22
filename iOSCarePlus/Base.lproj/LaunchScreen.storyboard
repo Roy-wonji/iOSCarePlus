@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,14 +66,6 @@
                                     <constraint firstAttribute="width" secondItem="47c-ea-z5L" secondAttribute="height" multiplier="1:1" id="btv-C6-XHD"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTy-Dx-wEP">
-                                <rect key="frame" x="286" y="571" width="119" height="71"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="mBw-BN-QDJ"/>
-                                    <constraint firstAttribute="height" constant="71" id="woD-Ga-IN3"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,7 +80,6 @@
                             <constraint firstItem="O5k-MP-SxH" firstAttribute="leading" secondItem="gva-eC-8ct" secondAttribute="trailing" id="LXJ-Sc-Phx"/>
                             <constraint firstItem="3ga-ni-NQg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="MKU-wa-8Qh"/>
                             <constraint firstItem="47c-ea-z5L" firstAttribute="top" secondItem="L8k-c2-3eE" secondAttribute="bottom" constant="4" id="MtE-pr-rcf"/>
-                            <constraint firstItem="aTy-Dx-wEP" firstAttribute="top" secondItem="O5k-MP-SxH" secondAttribute="bottom" constant="31" id="P2o-v8-sRr"/>
                             <constraint firstItem="O5k-MP-SxH" firstAttribute="top" secondItem="L8k-c2-3eE" secondAttribute="top" id="Q0t-Xd-35f"/>
                             <constraint firstItem="O5k-MP-SxH" firstAttribute="top" secondItem="L8k-c2-3eE" secondAttribute="top" id="Qgp-ku-7cq"/>
                             <constraint firstItem="gva-eC-8ct" firstAttribute="top" secondItem="L8k-c2-3eE" secondAttribute="top" id="Und-U1-vB7"/>
@@ -116,9 +107,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

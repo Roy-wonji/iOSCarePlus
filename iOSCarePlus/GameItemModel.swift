@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct GameItemModel {
+    let gameTitle: String
+    let gameOriginPrice: Int
+    let gameDiscountPrice: Int?
+    
+    let imageURL: String
+}
