@@ -10,12 +10,12 @@ import Foundation
 struct NewGameContent: Decodable {
     let formalName: String
     let heroBannerURL: String
-    let screenshot: [NewGameScreenshot]
+    let screenshots: [NewGameScreenshot]
     
     enum CodingKeys: String, CodingKey {
         case formalName = "formal_name"
         case heroBannerURL = "hero_banner_url"
-        case screenshot
+        case screenshots
     }
 }
 
