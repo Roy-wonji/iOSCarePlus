@@ -79,20 +79,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-Rq-th7">
-                                                    <rect key="frame" x="154" y="12" width="248" height="20.5"/>
+                                                    <rect key="frame" x="146" y="12" width="256" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-wg-OJU">
-                                                    <rect key="frame" x="20" y="10" width="122" height="108"/>
+                                                    <rect key="frame" x="12" y="10" width="122" height="108"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="69" id="9TD-ma-k6T"/>
                                                         <constraint firstAttribute="width" constant="122" id="v68-FG-xhq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="k8n-Mz-0Dc">
-                                                    <rect key="frame" x="154" y="32.5" width="116" height="20.5"/>
+                                                    <rect key="frame" x="146" y="32.5" width="116" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-vz-s0f">
                                                             <rect key="frame" x="0.0" y="0.0" width="68" height="20.5"/>
@@ -115,6 +115,9 @@
                                                 <constraint firstItem="kqa-Rq-th7" firstAttribute="leading" secondItem="k8n-Mz-0Dc" secondAttribute="leading" id="FrM-Dh-bvI"/>
                                                 <constraint firstItem="RzT-wg-OJU" firstAttribute="top" secondItem="I0n-Gs-2Ys" secondAttribute="top" constant="10" id="ZAP-4T-9pG"/>
                                                 <constraint firstAttribute="trailing" secondItem="kqa-Rq-th7" secondAttribute="trailing" constant="12" id="aua-rn-VXl"/>
+                                                <constraint firstItem="RzT-wg-OJU" firstAttribute="top" secondItem="I0n-Gs-2Ys" secondAttribute="top" constant="10" id="l7G-9I-May"/>
+                                                <constraint firstAttribute="bottom" secondItem="RzT-wg-OJU" secondAttribute="bottom" constant="10" id="ms6-XS-hWV"/>
+                                                <constraint firstItem="RzT-wg-OJU" firstAttribute="leading" secondItem="I0n-Gs-2Ys" secondAttribute="leading" constant="12" id="pqU-7E-06S"/>
                                                 <constraint firstItem="k8n-Mz-0Dc" firstAttribute="top" secondItem="kqa-Rq-th7" secondAttribute="bottom" id="uQr-cN-AoA"/>
                                                 <constraint firstItem="kqa-Rq-th7" firstAttribute="leading" secondItem="RzT-wg-OJU" secondAttribute="trailing" constant="12" id="z4p-6N-nsi"/>
                                             </constraints>

@@ -45,8 +45,11 @@ extension GameListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemTableViewCell", for: indexPath) as? GameItemTableViewCell, let  content = model?.contents[indexPath.row] else { return UITableViewCell() }
-        
-        let model: GameItemModel = GameItemModel(gameTitle: content.formalName, gameOriginPrice: 10_000, gameDiscountPrice: nil, imageURL: content.heroBannerURL)
+        //스토리보드에 등록된 셀을 가져오는 것. 테이블뷰에 이미 등록되어 있는데 이를 가져오는 방법은 dequeReusableCell을 통해 가져온다
+        var screenshotURLs: [String] = []; content.screenshot.forEach { $0.images.forEach {
+            screenshotURLs.append($0.images)
+        }}
+        let model: GameItemModel = GameItemModel(gameTitle: content.formalName, gameOriginPrice: 10_000, gameDiscountPrice: nil, screenshot: screenshotURLs, imageURL: content.heroBannerURL)
         cell.setModel(model)
         
         return cell
