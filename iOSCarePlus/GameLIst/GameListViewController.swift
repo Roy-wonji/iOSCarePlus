@@ -21,7 +21,10 @@ class GameListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newGameListApiCall()}
+        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
+        newGameListApiCall()
+    }
+    
     private func newGameListApiCall() {
         AF.request(newGameListURL).responseJSON {[weak self] response in
             guard let data = response.data else { return }
@@ -44,11 +47,13 @@ extension GameListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemTableViewCell", for: indexPath) as? GameItemTableViewCell, let  content = model?.contents[indexPath.row] else { return UITableViewCell() }
-        //스토리보드에 등록된 셀을 가져오는 것. 테이블뷰에 이미 등록되어 있는데 이를 가져오는 방법은 dequeReusableCell을 통해 가져온다
-    
-        let model: GameItemModel = GameItemModel(gameTitle: content.formalName, gameOriginPrice: 10_000, gameDiscountPrice: nil, imageURL: content.heroBannerURL, screenshots: content.screenshots)
-        cell.setModel(model)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemCodeTableViewCell", for: indexPath)
         return cell
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameItemCodeTableViewCell", for: indexPath) as? GameItemTableViewCell, let  content = model?.contents[indexPath.row] else { return UITableViewCell() }
+//        //스토리보드에 등록된 셀을 가져오는 것. 테이블뷰에 이미 등록되어 있는데 이를 가져오는 방법은 dequeReusableCell을 통해 가져온다
+//
+//        let model: GameItemModel = GameItemModel(gameTitle: content.formalName, gameOriginPrice: 10_000, gameDiscountPrice: nil, imageURL: content.heroBannerURL, screenshots: content.screenshots)
+//        cell.setModel(model)
+//        return cell
     }
 }

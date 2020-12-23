@@ -28,7 +28,7 @@ class GameItemTableViewCell: UITableViewCell {
         let imageURL: URL? = URL(string: model.imageURL)
         gameImageView.kf.setImage(with: imageURL)
         
-        gameImageView.layer.cornerRadius = 0
+        gameImageView.layer.cornerRadius = 9
         gameImageView.layer.borderWidth = 1
         gameImageView.layer.borderColor = UIColor(red: 236 / 255.0, green: 236 / 255.0, blue: 236 / 255.0, alpha: 1).cgColor
         
