@@ -20,7 +20,7 @@ struct NewGameContent: Decodable {
 }
 
 struct NewGameScreenshot: Decodable {
-    let images: [NewGameScreenshot]
+    let images: [NewGameScreenshotURL]
 }
 
 struct NewGameScreenshotURL: Decodable {
@@ -32,6 +32,6 @@ struct NewGameResponse: Decodable {
     let length: Int
     let offset: Int
     let total: Int
-    let screenshot: [NewGameScreenshot]
-    let url: String
+//    let screenshot: [NewGameScreenshot]
+//    let url: String
 }
