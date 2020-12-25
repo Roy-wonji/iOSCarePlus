@@ -40,7 +40,6 @@ class GameItemCodeTableViewCell: UITableViewCell {
             gameImageView.widthAnchor.constraint(equalToConstant: 122),
             // 자기 기준에 대해서 오토레이아웃을 걸기떄문에 파라미터가 다르다
             gameImageView.heightAnchor.constraint(equalToConstant: 69)
-
         ])
         gameImageView.backgroundColor = .red
         //gameImageView에서 5만큼 낮게 만들어 준 것이고 그 사이의 여백은 12가 되게 한 것이다
@@ -48,12 +47,11 @@ class GameItemCodeTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
         titleLabel.topAnchor.constraint(equalTo: gameImageView.topAnchor, constant: 5),
         titleLabel.leadingAnchor.constraint(equalTo: gameImageView.trailingAnchor, constant: 12),
-                                        titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15),
+                                        titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15)
         //오른쪽 여백이 15는 최소로 남기겠다!
         ])
         
         titleLabel.text = "test"
-
         }
        
     required init?(coder: NSCoder) {
