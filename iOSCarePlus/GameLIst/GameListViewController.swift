@@ -63,6 +63,10 @@ extension GameListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isEnd {
             return (model?.contents.count ?? 0)
+        } else {
+            if model == nil {
+                return 0
+            }
         }
         return (model?.contents.count ?? 0) + 1 //10개의 데이터가 있는데 11개를 그려준다. 11개의 셀에 대한 처리가 필요하다
     }
