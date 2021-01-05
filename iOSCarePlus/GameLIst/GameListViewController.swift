@@ -61,6 +61,7 @@ extension GameListViewController: UITableViewDelegate {
 }
 extension GameListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //호출 할때 한번 호출, 그리고 셀이 그려질 때 호출된다 
         if isEnd {
             return (model?.contents.count ?? 0)
         } else {
