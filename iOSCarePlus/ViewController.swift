@@ -8,9 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBAction func logoTapAction(_ sender: UITapGestureRecognizer) {
+        self.blinkLogoAnmiation()
+    }
     @IBOutlet private weak var backgroundImageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var logoViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var logoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +30,11 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         appearLogoViewAnimation {[weak self] in self?.sliderBackgroundImageAnimation()
-            self?.blinkLogoAnmiation()}}
+
+            
+        }
+    }
+    
     private func appearLogoViewAnimation(completion: @escaping () -> Void) { UIView.animate(withDuration: 0.7, delay: 1, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: []) {
             [weak self] in self?.logoViewTopConstraint.constant = 17
             self?.view.layoutIfNeeded() //제약 조건에 맞게 화면도 갱신해야되는데, 뷰는 일정한 단위에 맞게 갱신이 되는데 이 애니메이션 효과일 때 감지해야되므로, 블록안에서 갱신하라고 말해야 차이 보고 갱신한다. 당장 뷰 업데이트 하라는 의미
