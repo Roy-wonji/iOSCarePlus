@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func logoTapAction(_ sender: UITapGestureRecognizer) {
+    @IBAction private func logoTapAction(_ sender: UITapGestureRecognizer) {
         self.blinkLogoAnmiation()
     }
     @IBOutlet private weak var backgroundImageViewLeadingConstraint: NSLayoutConstraint!
@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoView.layer.cornerRadius = 15    }
+        logoView.layer.cornerRadius = 15
+    }
     private func animationSettingDefault() {
         logoViewTopConstraint.constant = 200
         backgroundImageViewLeadingConstraint.constant = 17
@@ -30,8 +31,6 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         appearLogoViewAnimation {[weak self] in self?.sliderBackgroundImageAnimation()
-
-            
         }
     }
     

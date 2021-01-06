@@ -14,6 +14,30 @@ class GameListViewController: UIViewController {
     //setter 없이 getter만 있으면 get {} 생략가능, return도 하나면 생략가능
             "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
+    @IBOutlet private weak var newButton: SelectableButton!
+    @IBOutlet private weak var saleButton: SelectableButton!
+    @IBOutlet private weak var selectedLineCenterConstraints: NSLayoutConstraint!
+    @IBAction private func newButtonTouchUp(_ sender: Any) {
+        newButton.isSelected = true
+        saleButton.isSelected = false
+        
+        UIView.animate(withDuration: 0.1) {[weak self] in
+            self?.selectedLineCenterConstraints.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+        selectedLineCenterConstraints.constant = 0
+    }
+    @IBAction private func saleButtonTouchUp(_ sender: Any) {
+        newButton.isSelected = false
+        saleButton.isSelected = true
+        
+        let constant = saleButton.center.x - newButton.center.x
+        
+        UIView.animate(withDuration: 0.1) {[weak self] in
+            self?.selectedLineCenterConstraints.constant = constant
+            self?.view.layoutIfNeeded()
+    }
+    }
     private var newCount: Int = 10
     private var newOffset: Int = 0
     private var isEnd: Bool = false
@@ -29,8 +53,8 @@ class GameListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
+//
+//        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
         newGameListApiCall()
     }
     
