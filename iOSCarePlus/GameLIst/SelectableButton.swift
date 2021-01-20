@@ -16,7 +16,6 @@ class SelectableButton: UIButton {
         tintColor = .clear
     }
     
-        
     //    func select(_ value: Bool){
 //        if value{
 //            setTitleColor(UIColor.init(named: "black"), for: .normal)

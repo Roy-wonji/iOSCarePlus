@@ -38,7 +38,7 @@ class GameListViewController: UIViewController {
         newButton.isSelected = false
         saleButton.isSelected = true
         
-        let constant = saleButton.center.x - newButton.center.x
+        let constant: CGFloat = saleButton.center.x - newButton.center.x
         
         UIView.animate(withDuration: 0.1) {[weak self] in
             self?.selectedLineCenterConstraints.constant = constant
