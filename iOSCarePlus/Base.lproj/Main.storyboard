@@ -290,13 +290,51 @@
             </objects>
             <point key="canvasLocation" x="628.98550724637687" y="-1077.4553571428571"/>
         </scene>
+        <!--Game Detail View Controller-->
+        <scene sceneID="gg5-0k-DHp">
+            <objects>
+                <viewController storyboardIdentifier="GameDetailViewController" id="Pzd-Nr-v6n" customClass="GameDetailViewController" customModule="iOSCarePlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hhy-wN-Kfg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5u-EB-5AO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V5u-EB-5AO" secondAttribute="height" multiplier="414:331" id="10b-nR-ODu"/>
+                                    <constraint firstAttribute="width" secondItem="V5u-EB-5AO" secondAttribute="height" multiplier="414:331" id="T5N-Re-SbX"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="XVA-2T-x5o" kind="embed" id="ch1-q1-YhB"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4GV-37-D7R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="top" secondItem="4GV-37-D7R" secondAttribute="top" id="9cI-Kj-iZp"/>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="top" secondItem="Hhy-wN-Kfg" secondAttribute="top" id="Fbb-f7-Liz"/>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="leading" secondItem="4GV-37-D7R" secondAttribute="leading" id="PRW-RA-FP7"/>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="trailing" secondItem="4GV-37-D7R" secondAttribute="trailing" id="c6P-DW-qWj"/>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="leading" secondItem="4GV-37-D7R" secondAttribute="leading" id="d7J-sY-v0a"/>
+                            <constraint firstItem="V5u-EB-5AO" firstAttribute="trailing" secondItem="4GV-37-D7R" secondAttribute="trailing" id="lwu-P9-ZOT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerViewController" destination="V5u-EB-5AO" id="ZuN-1q-wcH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSe-GK-qPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462.3188405797102" y="-1062.0535714285713"/>
+        </scene>
         <!--Game Detail Page View Controller-->
         <scene sceneID="4BU-yJ-2Rr">
             <objects>
-                <pageViewController storyboardIdentifier="GameDetailPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="XVA-2T-x5o" customClass="GameDetailPageViewController" customModule="iOSCarePlus" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GameDetailPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XVA-2T-x5o" customClass="GameDetailPageViewController" customModule="iOSCarePlus" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAh-XE-VnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-1077"/>
+            <point key="canvasLocation" x="2257" y="-1071"/>
         </scene>
         <!--Game Detail Image View Controller-->
         <scene sceneID="15p-Tz-Dkg">
@@ -306,7 +344,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFb-iR-ZFy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFb-iR-ZFy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
@@ -319,10 +357,13 @@
                             <constraint firstAttribute="bottom" secondItem="GFb-iR-ZFy" secondAttribute="bottom" id="oXR-sV-7hn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="GFb-iR-ZFy" id="sjj-8G-zfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zb-uB-m6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2572" y="-1077"/>
+            <point key="canvasLocation" x="3164" y="-1071"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="29l-7a-0iC">
