@@ -10,10 +10,14 @@ import UIKit
 
 class GameListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
-    var getNewGameListURL: String {
+    private var getNewGameListURL: String {
     //setter 없이 getter만 있으면 get {} 생략가능, return도 하나면 생략가능
             "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
+    private var getSaleGameListURL: String {
+        "https://ec.nintendo.com/api/KR/ko/search/sales?count=\(newCount)&offset=\(newOffset)"
+    }
+    
     @IBOutlet private weak var newButton: SelectableButton!
     @IBOutlet private weak var saleButton: SelectableButton!
     @IBOutlet private weak var selectedLineCenterConstraints: NSLayoutConstraint!
@@ -25,7 +29,10 @@ class GameListViewController: UIViewController {
             self?.selectedLineCenterConstraints.constant = 0
             self?.view.layoutIfNeeded()
         }
-        selectedLineCenterConstraints.constant = 0
+        model?.contents.removeAll()
+        newOffset = 0
+        gameListApiCall(getNewGameListURL)
+        //        selectedLineCenterConstraints.constant = 0
     }
     @IBAction private func saleButtonTouchUp(_ sender: Any) {
         newButton.isSelected = false
@@ -37,6 +44,9 @@ class GameListViewController: UIViewController {
             self?.selectedLineCenterConstraints.constant = constant
             self?.view.layoutIfNeeded()
     }
+        model?.contents.removeAll()
+        newOffset = 0
+        gameListApiCall(getSaleGameListURL)
     }
     private var newCount: Int = 10
     private var newOffset: Int = 0
@@ -55,11 +65,11 @@ class GameListViewController: UIViewController {
         super.viewDidLoad()
 //
 //        tableView.register(GameItemCodeTableViewCell.self, forCellReuseIdentifier: "GameItemCodeTableViewCell")
-        newGameListApiCall()
+        gameListApiCall(getNewGameListURL)
     }
     
-    private func newGameListApiCall() {
-        AF.request(getNewGameListURL).responseJSON {[weak self] response in
+    private func gameListApiCall(_ url: String) {
+        AF.request(url).responseJSON {[weak self] response in
             guard let data = response.data else { return }
             let decoder: JSONDecoder = JSONDecoder()
             guard let newModel: NewGameResponse = try? decoder.decode(NewGameResponse.self, from: data) else {
@@ -99,7 +109,7 @@ extension GameListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if isIndicatorCell(indexPath) {
             newOffset += 10
-            newGameListApiCall()
+            gameListApiCall(getSaleGameListURL)
         }
     }
     
@@ -109,7 +119,7 @@ extension GameListViewController: UITableViewDataSource {
         //마지막 셀일 때 위의 것을 호출한다
         if isIndicatorCell(indexPath) {
             newOffset += 10 //10번쨰부터 10개를 새로 더 호출한다
-            newGameListApiCall()
+            gameListApiCall(getNewGameListURL)
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "IndicatorCell", for: indexPath) as? IndicatorCell else { return
                 UITableViewCell() }
                 cell.animationIndicatorView()
