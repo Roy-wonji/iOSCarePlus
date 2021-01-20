@@ -92,7 +92,13 @@ class GameListViewController: UIViewController {
 }
 
 extension GameListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let pageViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailPageViewController") as? GameDetailPageViewController else { return }
+        pageViewController.model = model?.contents[indexPath.row]
+        navigationController?.pushViewController(pageViewController, animated: true)
+    }
 }
+
 extension GameListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //호출 할때 한번 호출, 그리고 셀이 그려질 때 호출된다 

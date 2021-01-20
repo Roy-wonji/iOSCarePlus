@@ -13,6 +13,8 @@
 		6418BD57258A2B3800D28A07 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6418BD56258A2B3800D28A07 /* Alamofire */; };
 		6418BD5A258A2EA800D28A07 /* NewGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418BD59258A2EA800D28A07 /* NewGameResponse.swift */; };
 		6418BD5E258A341800D28A07 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6418BD5D258A341800D28A07 /* Kingfisher */; };
+		6443018A25B83C5E00FFA379 /* GameDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6443018925B83C5E00FFA379 /* GameDetailPageViewController.swift */; };
+		6443018E25B83C7200FFA379 /* GameDetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6443018D25B83C7200FFA379 /* GameDetailImageViewController.swift */; };
 		6471A30C25935D36005AB049 /* GameItemCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471A30B25935D36005AB049 /* GameItemCodeTableViewCell.swift */; };
 		648ADECB25A5D5E400E6F2BC /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648ADECA25A5D5E400E6F2BC /* Navigation.storyboard */; };
 		648ADECE25A5DF9500E6F2BC /* SelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648ADECD25A5DF9500E6F2BC /* SelectableButton.swift */; };
@@ -31,6 +33,8 @@
 		6418BD4F258A23A100D28A07 /* GameItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemModel.swift; sourceTree = "<group>"; };
 		6418BD52258A248C00D28A07 /* GameItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemTableViewCell.swift; sourceTree = "<group>"; };
 		6418BD59258A2EA800D28A07 /* NewGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameResponse.swift; sourceTree = "<group>"; };
+		6443018925B83C5E00FFA379 /* GameDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailPageViewController.swift; sourceTree = "<group>"; };
+		6443018D25B83C7200FFA379 /* GameDetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailImageViewController.swift; sourceTree = "<group>"; };
 		6471A30B25935D36005AB049 /* GameItemCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemCodeTableViewCell.swift; sourceTree = "<group>"; };
 		648ADECA25A5D5E400E6F2BC /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		648ADECD25A5DF9500E6F2BC /* SelectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButton.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6443018825B83C2C00FFA379 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6443018925B83C5E00FFA379 /* GameDetailPageViewController.swift */,
+				6443018D25B83C7200FFA379 /* GameDetailImageViewController.swift */,
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
 		6471A30E25935D62005AB049 /* GameLIst */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,7 @@
 		64D8C726257C8A9E00B3D36E /* iOSCarePlus */ = {
 			isa = PBXGroup;
 			children = (
+				6443018825B83C2C00FFA379 /* GameDetail */,
 				64D8C727257C8A9E00B3D36E /* AppDelegate.swift */,
 				64D8C729257C8A9E00B3D36E /* SceneDelegate.swift */,
 				64D8C72B257C8A9E00B3D36E /* ViewController.swift */,
@@ -224,6 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6443018A25B83C5E00FFA379 /* GameDetailPageViewController.swift in Sources */,
+				6443018E25B83C7200FFA379 /* GameDetailImageViewController.swift in Sources */,
 				6418BD53258A248C00D28A07 /* GameItemTableViewCell.swift in Sources */,
 				6491C1082593730E00525CE8 /* IndicatorCell.swift in Sources */,
 				6471A30C25935D36005AB049 /* GameItemCodeTableViewCell.swift in Sources */,
